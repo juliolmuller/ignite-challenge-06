@@ -20,14 +20,7 @@ export function Banner() {
       py="7"
       bg="url('/img/banner.svg')"
     >
-      <Container
-        pos="relative"
-        display="flex"
-        alignItems="center"
-        h="100%"
-        maxW={1160}
-        mx="auto"
-      >
+      <Container pos="relative" display="flex" alignItems="center" h="100%">
         <Stack w="100%" spacing="5">
           <Heading
             as="h1"

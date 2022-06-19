@@ -13,8 +13,6 @@ export function AppHeader() {
         alignItems="center"
         justifyContent="center"
         h="100%"
-        maxW={1160}
-        mx="auto"
       >
         {asPath !== '/' && (
           <Link href="/" passHref>
