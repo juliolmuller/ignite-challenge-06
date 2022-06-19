@@ -6,7 +6,7 @@ export function AppHeader() {
   const { asPath } = useRouter();
 
   return (
-    <Box as="header" h="6.25rem" w="100%" px="4">
+    <Box as="header" h="24" w="100%" px="4">
       <Container
         pos="relative"
         display="flex"
@@ -22,8 +22,8 @@ export function AppHeader() {
               as="a"
               icon={<Img src="/img/back-icon.svg" alt="ícone de voltar" />}
               pos="absolute"
-              left="0"
-              h="1rem"
+              left={0}
+              h="4"
               aria-label="botão de voltar"
             />
           </Link>
