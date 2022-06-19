@@ -2,7 +2,7 @@ import { Box, ChakraProvider, Flex } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 
 import { AppHeader } from '~/components';
-import theme from '~/styles/theme';
+import { theme } from '~/config';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
