@@ -1,4 +1,4 @@
-import { Box, Flex, IconButton, Img } from '@chakra-ui/react';
+import { Box, Container, IconButton, Img } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -7,12 +7,12 @@ export function AppHeader() {
 
   return (
     <Box as="header" h="6.25rem" w="100%" px="4">
-      <Flex
+      <Container
         pos="relative"
-        align="center"
-        justify="center"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
         h="100%"
-        w="100%"
         maxW={1160}
         mx="auto"
       >
@@ -30,7 +30,7 @@ export function AppHeader() {
         )}
 
         <Img src="/img/logo.svg" alt="logo de WorldTrip" />
-      </Flex>
+      </Container>
     </Box>
   );
 }
