@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { CarouselItem } from './CarouselItem';
+import { CarouselItem, CarouselItemProps } from './CarouselItem';
 
 import 'swiper/css';
 import 'swiper/css/a11y';
@@ -47,9 +47,11 @@ const StyleSwiper = styled(Swiper)`
   }
 `;
 
-export interface CarouselProps {}
+export interface CarouselProps {
+  items: CarouselItemProps[];
+}
 
-export function Carousel() {
+export function Carousel({ items }: CarouselProps) {
   return (
     <StyleSwiper
       modules={[A11y, Autoplay, Keyboard, Navigation, Pagination]}
@@ -68,13 +70,11 @@ export function Carousel() {
       }}
       spaceBetween={20}
     >
-      {Array(5)
-        .fill(null)
-        .map((_, index) => (
-          <SwiperSlide key={index}>
-            <CarouselItem />
-          </SwiperSlide>
-        ))}
+      {items.map((item) => (
+        <SwiperSlide key={item.title}>
+          <CarouselItem {...item} />
+        </SwiperSlide>
+      ))}
     </StyleSwiper>
   );
 }

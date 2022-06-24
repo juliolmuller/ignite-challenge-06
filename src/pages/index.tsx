@@ -1,9 +1,19 @@
 import { Container, Divider, Flex } from '@chakra-ui/react';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import { Banner, CallToAction, TripType } from '~/components';
 
-export default function HomePage() {
+interface HomeProps {
+  continents: Array<{
+    image: string;
+    title: string;
+    subtitle: string;
+    url: string;
+  }>;
+}
+
+export default function HomePage({ continents }: HomeProps) {
   return (
     <>
       <Head>
@@ -36,9 +46,55 @@ export default function HomePage() {
             borderColor="dark.text"
           />
 
-          <CallToAction />
+          <CallToAction items={continents} />
         </Flex>
       </Container>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  return {
+    revalidate: 60 * 60 * 24, // 1 day
+    props: {
+      continents: [
+        {
+          image: '/img/continent-oceania.jpg',
+          title: 'Oceania',
+          subtitle: 'Harmonia da diversidade e da cultura',
+          url: '/oceania',
+        },
+        {
+          image: '/img/continent-latin-america.jpg',
+          title: 'América Latina',
+          subtitle: 'Natureza e cultura exuberantes',
+          url: '/latin-america',
+        },
+        {
+          image: '/img/continent-europe.jpg',
+          title: 'Europa',
+          subtitle: 'O continente mais antigo',
+          url: '/europe',
+        },
+        {
+          image: '/img/continent-north-america.jpg',
+          title: 'América do Norte',
+          subtitle: 'Desfrute do urbano e da natureza',
+          url: '/north-america',
+        },
+        {
+          image: '/img/continent-asia.jpg',
+          title: 'Ásia',
+          subtitle: 'Explore a história do Oriente',
+          url: '/asia',
+        },
+        {
+          image: '/img/continent-africa.jpg',
+          title: 'África',
+          subtitle: 'Riqueza em cultura e história',
+          url: '/africa',
+        },
+      ],
+    },
+  };
+};

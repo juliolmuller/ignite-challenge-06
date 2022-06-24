@@ -1,8 +1,10 @@
 import { Box, Stack, Text } from '@chakra-ui/react';
 
-import { Carousel } from './Carousel';
+import { Carousel, CarouselProps } from './Carousel';
 
-export function CallToAction() {
+export interface CallToActionProps extends CarouselProps {}
+
+export function CallToAction(props: CallToActionProps) {
   return (
     <Stack align="center" spacing={['6', '8', '10', '12']} w="100%">
       <Text
@@ -15,7 +17,7 @@ export function CallToAction() {
       </Text>
 
       <Box h={[250, 300, 375, 450]} w="inherit" bg="gray.800">
-        <Carousel />
+        <Carousel {...props} />
       </Box>
     </Stack>
   );
