@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 import { Banner, CallToAction, TripType } from '~/components';
 
-interface HomeProps {
+interface HomePageProps {
   continents: Array<{
     image: string;
     title: string;
@@ -13,7 +13,7 @@ interface HomeProps {
   }>;
 }
 
-export default function HomePage({ continents }: HomeProps) {
+export default function HomePage({ continents }: HomePageProps) {
   return (
     <>
       <Head>
@@ -53,7 +53,7 @@ export default function HomePage({ continents }: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   return {
     revalidate: 60 * 60 * 24, // 1 day
     props: {
