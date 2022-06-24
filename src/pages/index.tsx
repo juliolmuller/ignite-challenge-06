@@ -1,7 +1,7 @@
 import { Container, Divider, Flex } from '@chakra-ui/react';
 import Head from 'next/head';
 
-import { Banner, TripType } from '~/components';
+import { Banner, CallToAction, TripType } from '~/components';
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
 
       <Banner />
 
-      <Container my={['9', '12', '16', '28']}>
+      <Container my={['9', '12', '16', '28']} px={[0, 0, 0, '4']}>
         <Flex direction="column" align="center">
           <Flex
             align="flex-start"
@@ -20,6 +20,7 @@ export default function HomePage() {
             wrap="wrap"
             gap={['12', '12', '20', 0]}
             w="100%"
+            px={['2', '2', '4', 0]}
           >
             <TripType iconSrc="/img/nightlife-icon.svg" title="vida noturna" />
             <TripType iconSrc="/img/beach-icon.svg" title="praias" />
@@ -28,7 +29,14 @@ export default function HomePage() {
             <TripType iconSrc="/img/world-icon.svg" title="e mais..." />
           </Flex>
 
-          <Divider w={90} mt="20" mb="12" borderColor="dark.text" />
+          <Divider
+            w={90}
+            mt={['9', '12', '16', '20']}
+            mb={['6', '8', '10', '12']}
+            borderColor="dark.text"
+          />
+
+          <CallToAction />
         </Flex>
       </Container>
     </>

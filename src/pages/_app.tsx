@@ -7,7 +7,7 @@ import { theme } from '~/config';
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Flex direction="column" minH="100vh" w="100vw">
+      <Flex direction="column" minH="100vh" w="100%">
         <AppHeader />
 
         <Box as="main" flex="1" w="100%">

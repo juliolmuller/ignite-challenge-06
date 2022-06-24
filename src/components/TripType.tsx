@@ -33,7 +33,7 @@ export function TripType({ iconSrc, title }: TripTypeProps) {
         pos="relative"
         w="fit-content"
         fontSize="2xl"
-        fontWeight="semibold"
+        fontWeight={['medium', 'medium', 'semibold']}
         align="center"
         _before={isMdDisplay ? undefined : beforeCSS}
       >
