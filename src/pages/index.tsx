@@ -2,7 +2,7 @@ import { Container, Divider, Flex } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { Banner, CallToAction, TripType } from '~/components';
+import { Banner, CallToAction, HighlightType } from '~/components';
 
 interface HomePageProps {
   continents: Array<{
@@ -32,11 +32,14 @@ export default function HomePage({ continents }: HomePageProps) {
             w="100%"
             px={['2', '2', '4', 0]}
           >
-            <TripType iconSrc="/img/nightlife-icon.svg" title="vida noturna" />
-            <TripType iconSrc="/img/beach-icon.svg" title="praias" />
-            <TripType iconSrc="/img/modern-icon.svg" title="moderno" />
-            <TripType iconSrc="/img/classic-icon.svg" title="clássico" />
-            <TripType iconSrc="/img/world-icon.svg" title="e mais..." />
+            <HighlightType
+              iconSrc="/img/nightlife-icon.svg"
+              title="vida noturna"
+            />
+            <HighlightType iconSrc="/img/beach-icon.svg" title="praias" />
+            <HighlightType iconSrc="/img/modern-icon.svg" title="moderno" />
+            <HighlightType iconSrc="/img/classic-icon.svg" title="clássico" />
+            <HighlightType iconSrc="/img/world-icon.svg" title="e mais..." />
           </Flex>
 
           <Divider

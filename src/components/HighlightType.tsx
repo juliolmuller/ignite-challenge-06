@@ -6,12 +6,12 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 
-export interface TripTypeProps {
+export interface HighlightTypeProps {
   iconSrc: string;
   title: string;
 }
 
-export function TripType({ iconSrc, title }: TripTypeProps) {
+export function HighlightType({ iconSrc, title }: HighlightTypeProps) {
   const isMdDisplay = useBreakpointValue({ base: false, md: true });
   const beforeCSS: CSSObject = {
     content: '" "',
